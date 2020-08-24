@@ -1,0 +1,1 @@
+To understand the basics of Git
