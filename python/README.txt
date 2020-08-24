@@ -1,0 +1,1 @@
+To understand basic codes of Python
