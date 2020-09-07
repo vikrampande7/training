@@ -1,0 +1,408 @@
+Chapter 1.
+**********
+It gives basic idea about python and the fields where this language can be used.
+
+
+Chapter 2.
+**********
+The python interpreter.
+
+
+Section 2.1
+''''''''''
+In this section installation of the python interpreter is explained.
+How to invoke the interpreter in your terminal by using various methods is also explained.
+Modules can be invoked using python interpreter.
+
+
+Section 2.1.1
+''''''''''
+Argument passing in sys module.
+
+Section 2.1.2
+''''''''''
+'>>>' Indicates primary prompt.
+'...' Indicates continuation line (Secondary prompt).
+
+
+``````````
+>>> if 3*3 == 9:
+...     print ('3 square is 9')
+... 
+3 square is 9
+>>> 
+
+
+Section 2.2
+''''''''''
+Interpreter and its environment.
+
+
+Section 2.2.1
+''''''''''
+It shows some commands for changing the source file encoder.
+
+
+Chapter 3
+**********
+Informal introduction to python.
+
+Section 3.1
+''''''''''
+Using python as calculator.
+
+Section 3.1.1
+''''''''''
+Python interpreter can be used as calculator performing basic operations on numbers.
+
+``````````
+>>> 2 + 2
+4
+>>> 9 - 6
+3
+>>> 7 / 3
+2.3333333333333335
+>>> 4 * 3
+12
+>>> 2 ** 5
+32
+>>> 9 // 4
+2
+>>> 13 % 5
+3
+>>> 
+
+Section 3.1.2
+''''''''''
+This interpreter can also perform various actions on strings.
+
+``````````
+>>> 'python'
+'python'
+>>> print ('python')
+python
+>>> a = 'py'
+>>> b = 'thon'
+>>> c = a + b
+>>> print (c)
+python
+>>> a = 'python'
+>>> b = "python"
+>>> print (a)
+python
+>>> print (b)
+python
+>>> print ("This is line one.\nThis is next line")
+This is line one.
+This is next line
+>>> print (r"Line 1\nLine 2(r defines a raw string)")
+Line 1\nLine 2(r defines a raw string)
+>>> print (3 * 'python')
+pythonpythonpython
+>>> a = 'computer'
+>>> print (a[2])
+m
+>>> print (a[-1])
+r
+>>> print (a[2:7])
+mpute
+>>> print (a[:4] + a[4:])
+computer
+>>> len(a)
+8
+
+
+There are various methods associated with strings to perform different operations.
+Syntax for using those methonds is...
+string_name.method_name(parameters)
+
+``````````
+>>> a = 'python'
+>>> a.capitalize()
+'Python'
+>>> a.
+a.__add__(           a.__hash__(          a.__rmod__(          a.find(              a.istitle(           a.rsplit(
+a.__class__(         a.__init__(          a.__rmul__(          a.format(            a.isupper(           a.rstrip(
+a.__contains__(      a.__iter__(          a.__setattr__(       a.format_map(        a.join(              a.split(
+a.__delattr__(       a.__le__(            a.__sizeof__(        a.index(             a.ljust(             a.splitlines(
+a.__dir__(           a.__len__(           a.__str__(           a.isalnum(           a.lower(             a.startswith(
+a.__doc__            a.__lt__(            a.__subclasshook__(  a.isalpha(           a.lstrip(            a.strip(
+a.__eq__(            a.__mod__(           a.capitalize(        a.isdecimal(         a.maketrans(         a.swapcase(
+a.__format__(        a.__mul__(           a.casefold(          a.isdigit(           a.partition(         a.title(
+a.__ge__(            a.__ne__(            a.center(            a.isidentifier(      a.replace(           a.translate(
+a.__getattribute__(  a.__new__(           a.count(             a.islower(           a.rfind(             a.upper(
+a.__getitem__(       a.__reduce__(        a.encode(            a.isnumeric(         a.rindex(            a.zfill(
+a.__getnewargs__(    a.__reduce_ex__(     a.endswith(          a.isprintable(       a.rjust(             
+a.__gt__(            a.__repr__(          a.expandtabs(        a.isspace(           a.rpartition(        
+>>> a.startswith('p')
+True
+>>> a.startswith('P')
+False
+>>> a.split
+a.split(       a.splitlines(  
+>>> a.split('h')
+['pyt', 'on']
+>>> a.upper()
+'PYTHON'
+
+Section 3.1.3
+''''''''''
+This section briefs about Lists and basic operations that can be made on the list.
+
+``````````
+>>> list = [1,2,3,5,8,13,21,34,55,89]
+>>> print (list[2])
+3
+>>> print (list[3:7])
+[5, 8, 13, 21]
+>>> list.append('Archis')
+>>> print (list)
+[1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 'Archis']
+>>> len(list)
+8
+
+
+Section 3.2
+''''''''''
+This section can be considered as basic step towards progrmming.
+
+``````````
+Fibonacci Series
+>>> a, b = 0, 1
+>>> while a < 100:
+...     print (a)
+...     a , b = b , a+b
+... 
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+
+Chapter 4
+**********
+Control Flow Tools
+
+Section 4.1
+""""""""""
+If statements
+''''''''''
+This is one of the basic functions used for flow control.
+Used in conditional statements.
+**********
+>>> i = int(input('enter a number'))
+enter a number8
+>>> if i > 0:
+...     print ('positive number')
+... elif i == 0:
+...     print ('Zero')
+... else:
+...     print ('negative number')
+... 
+positive number
+
+Section 4.2
+""""""""""
+
+for statements
+''''''''''
+for statement is used for iterating through a list, array, dictionary.
+it can be also used for iterating through a string,list of strings etc.
+**********
+code for dividing all numbers in a list by 2.
+
+>>> list = [2,5,8,23,66,80,95]
+>>> for number in list:
+...     print(number/2)
+... 
+1.0
+2.5
+4.0
+11.5
+33.0
+40.0
+47.5
+
+**********
+code for iterating through a list of strings.
+>>> words = ['cat', 'window', 'defenestrate']
+>>> for word in words:
+...     print (word,len(word))
+... 
+cat 3
+window 6
+defenestrate 12
+
+Section 4.3
+""""""""""
+range() function
+''''''''''
+range is an in-built function used for iterating over a sequence of numbers.
+**********
+>>> for i in range(0,7):
+...     print (i)
+... 
+0
+1
+2
+3
+4
+5
+6
+
+**********
+>>> a = ['Mary', 'had', 'a', 'little', 'lamb']
+>>> for word in range(0,len(a)):
+...     print (word,a[word])
+... 
+0 Mary
+1 had
+2 a
+3 little
+4 lamb
+
+**********
+>>> sum(range(4,12))
+60
+>>> 4+5+6+7+8+9+10+11
+60
+
+Section 4.4
+""""""""""
+Break and continue statements and else clause
+The break statement breaks out of the innermost loop in a FOR or WHILE loop.
+
+**********
+prime numbers upto 20 using break statement
+>>> for a in range(2,20):
+...     for b in range(2,a):
+...             if a % b == 0:
+...                     print(a,'is composite number')
+...                     break
+...     else:
+...             print(a,'is prime number')
+... 
+2 is prime number
+3 is prime number
+4 is composite number
+5 is prime number
+6 is composite number
+7 is prime number
+8 is composite number
+9 is composite number
+10 is composite number
+11 is prime number
+12 is composite number
+13 is prime number
+14 is composite number
+15 is composite number
+16 is composite number
+17 is prime number
+18 is composite number
+19 is prime number
+20 is composite number
+
+**********
+odd even numbers using continue statement
+>>> for num in range(2,15):
+...     if num % 2 == 0:
+...             print (num,':even no')
+...             continue
+...     else:
+...             print (num,':odd no')
+... 
+2 :even no
+3 :odd no
+4 :even no
+5 :odd no
+6 :even no
+7 :odd no
+8 :even no
+9 :odd no
+10 :even no
+11 :odd no
+12 :even no
+13 :odd no
+14 :even no
+
+Section 4.5
+""""""""""
+
+Pass statement
+''''''''''
+pass statement does nothing.
+It is used to ignore syntax error that might occur in a loop.
+
+**********
+>>> while True:
+...     pass
+...
+
+Section 4.6
+""""""""""
+
+Defining functions
+''''''''''
+Functions can be user created.
+using def() keyword we can creat any function to implement our logic.
+we can pass arguments inside the '()' paranthesis which we are going to use in the function.
+arguments can be default or user input.
+**********
+>>> def fib(n):
+...     a , b = 0 , 1
+...     while a < n:
+...             print (a)
+...             a , b = b , a+b
+... 
+>>> fib(10)
+0
+1
+1
+2
+3
+5
+8
+
+Section 4.7
+""""""""""
+More on functions
+''''''''''
+There are three forms of arguments which can be passed to a function.
+
+section 4.7.1
+""""""""""
+Default argument values
+''''''''''
+Default arguments are the arguments whose values are already in the code or which are defined.
+These arguments are also mutable.Users can define them too.
+**********
+>>> def test(a,b=4):
+...     if a < 0 :
+...             print ('a is neg')
+...     if a > 0 :
+...             print ('a is positive')
+...     if a == 0:
+...             print ('a is 0')
+...     if b > 0 :
+...             print ('b is positive')
+...     if b < 0 :
+...             print ('b is neg')
+...     if b == 0:
+...             print ('b is 0')
+... 
+>>> test(6)
+a is positive
+b is positive
+>>> test(4,-2)
+a is positive
+b is neg
+>>> test(b=-7,a=0)
+a is 0
+b is neg
