@@ -406,3 +406,50 @@ b is neg
 >>> test(b=-7,a=0)
 a is 0
 b is neg
+
+>>> def ask_ok(prompt, retries=4, reminder='Please try again!'):
+...     while True:
+...             ok = input(prompt)
+...             if ok in ('y', 'ye', 'yes'):
+...                     return True
+...             if ok in ('n', 'no', 'nop', 'nope'):
+...                     return False
+...             retries = retries - 1
+...             if retries < 0:
+...                     raise ValueError('invalid user response')
+...             print(reminder)
+...
+>>> ask_ok('do you wany to quit?')
+do you wany to quit?yess
+Please try again!
+do you wany to quit?yessss
+Please try again!
+do you wany to quit?yessssss
+Please try again!
+do you wany to quit?yos
+Please try again!
+do you wany to quit?yeah
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 10, in ask_ok
+ValueError: invalid user response
+>>> ask_ok('Do you want to quit?')
+Do you want to quit?yes
+True
+>>> ask_ok('Do you want to quit?')
+Do you want to quit?No
+Please try again!
+Do you want to quit?no
+False
+
+>>> def f(a, L=None):
+...     if L is None:
+...         L = []
+...     L.append(a)
+...     return L
+...
+>>> f(5,L=[1,2,3,4])
+[1, 2, 3, 4, 5]
+
+Section 4.7.2
+-------------
