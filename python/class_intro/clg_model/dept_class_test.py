@@ -6,8 +6,8 @@ from dept_class import Student
 if __name__ == "__main__":
 
 
-    dept1 = Department('ENTC','Vilas')
-    dept2 = Department('Mechanical','Ajay')
+    dept1 = Department('ENTC')
+    dept2 = Department('Mechanical')
 
     course1 = Course('VLSI','VIII','ENTC')
     course2 = Course('EDC','IV','ENTC')
@@ -79,13 +79,6 @@ if __name__ == "__main__":
     print ('------------------')
     print (dept1)
     print (dept2)
-
-
-    print('\n')
-    print ('HoD of Department')
-    print ('-----------------')
-    dept1.check_hod(prof1)
-    dept2.check_hod(prof5)
 
     print ('\n')
     print ('Course Details')

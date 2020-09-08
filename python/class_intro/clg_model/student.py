@@ -1,22 +1,3 @@
-class Course:
-    #Initiating constructor of class Course 
-    def __init__(self,course_name,semester,related_dept,capacity=10):
-        self.course_name = course_name
-        self.semester = semester
-        self.capacity = capacity
-        self.related_dept = related_dept
-        #Creating empty list to store enrollments of students in a course
-        self.enrollments = []
-    #repr function for representing course details     
-    def __repr__(self):
-        enrolls = []
-        for each in self.enrollments:
-            #Appending only roll_nos of students in course details
-            enrolls.append(str(each.roll_no))
-        a = ",".join(enrolls)
-        return 'Course name = %s , Semester = %s , Enrollments = %s, count = %s' % (self.course_name , self.semester , a , len(self.enrollments))
-
-
 class Student:
     #Initiating constructor of class Student
     def __init__(self,name,roll_no,year,department):
@@ -88,39 +69,3 @@ class Student:
             enrolls.append(str(each.course_name))
         a = ", ".join(enrolls)
         return 'Student Name = %s , Roll_no = %d , Year_studying_in = %s , Department = %s Enrolled_courses  = %s' % (self.name , self.roll_no , self.year ,self.department,a)
-            
-class Professor:
-    def __init__(self,prof_name, subjects_taught = []):
-        self.prof_name = prof_name
-        self.subjects_taught = subjects_taught
-    ###method to append subjects
-    ###assign_new_subject
-    def __repr__(self):
-        return 'Professor Name = %s , Subjects_Taught = %s' % (self.prof_name , ','.join(self.subjects_taught))
-
-class Department:
-    def __init__(self,dept_name):
-        ###student objects,prof obj , course obj
-        ###3 methods 
-        ###3 lists
-        ###assign_new_hod method
-        self.dept_name = dept_name
-
-    """
-    def assign_course_to_professor(self,professor,course):
-        prof_list = []
-        course_list = []
-        if professor.prof_name not in prof_list:
-            prof_list.append(professor.prof_name) 
-        for each in professor.subjects_taught:
-            if each not in course_list:
-                course_list.append(professor.prof_name)
-        print (course_list)
-    """
-
-    def __repr__(self):
-        return 'Department = %s'  % (self.dept_name)
-
-
-
- 
