@@ -1,10 +1,9 @@
 class Course:
     #Initiating constructor of class Course 
-    def __init__(self,course_name,semester,related_dept,capacity=10):
+    def __init__(self,course_name,semester,capacity=10):
         self.course_name = course_name
         self.semester = semester
         self.capacity = capacity
-        self.related_dept = related_dept
         #Creating empty list to store enrollments of students in a course
         self.enrollments = []
     #repr function for representing course details     
