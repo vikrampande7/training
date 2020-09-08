@@ -1,1 +1,1 @@
-To understand the basics of Git
+Training of Python,Git etc.
