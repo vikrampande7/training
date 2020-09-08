@@ -1,9 +1,10 @@
 class Course:
     #Initiating constructor of class Course 
-    def __init__(self,course_name,semester,capacity = 10):
+    def __init__(self,course_name,semester,related_dept,capacity=10):
         self.course_name = course_name
         self.semester = semester
         self.capacity = capacity
+        self.related_dept = related_dept
         #Creating empty list to store enrollments of students in a course
         self.enrollments = []
     #repr function for representing course details     
@@ -30,53 +31,55 @@ class Student:
         #List of current semesters
         current_semester = ['I','III','V','VII']
         #Condition for checking the course capacity
-        if len(course.enrollments) < course.capacity:
-            #Checking the course availability on the basis of year
-            if self.year == 'BE':
-                #Checking the availability on the basis of semester
-                if course.semester == 'VII' or course.semester == 'VIII': 
-                    if course.semester in current_semester:
-                    #Appending the selected course in the enrolled_courses list
-                        self.enrolled_courses.append(course)
-                    #Appending all student objects in the course enrollments list  
-                        course.enrollments.append(self)
+        if self.department == course.related_dept:
+            if len(course.enrollments) < course.capacity:
+                #Checking the course availability on the basis of year
+                if self.year == 'BE':
+                    #Checking the availability on the basis of semester
+                    if course.semester == 'VII' or course.semester == 'VIII': 
+                        if course.semester in current_semester:
+                            #Appending the selected course in the enrolled_courses list
+                            self.enrolled_courses.append(course)
+                            #Appending all student objects in the course enrollments list  
+                            course.enrollments.append(self)
+                        else:
+                            print ("can't enroll", self.name ,':', course.course_name, 'is not available in current semester')
                     else:
-                        print ("can't enroll", self.name ,':', course.course_name, 'is not available in current semester')
-                else:
-                    print ("Can't enroll" ,self.name,':', course.course_name, 'is not available for',self.year)
+                        print ("Can't enroll" ,self.name,':', course.course_name, 'is not available for',self.year)
 
-            elif self.year == 'TE':
-                if course.semester == 'V' or course.semester == 'VI':
-                    if course.semester in current_semester:
-                        self.enrolled_courses.append(course)
-                        course.enrollments.append(self)
+                elif self.year == 'TE':
+                    if course.semester == 'V' or course.semester == 'VI':
+                        if course.semester in current_semester:
+                            self.enrolled_courses.append(course)
+                            course.enrollments.append(self)
+                        else:
+                            print ("can't enroll", self.name ,':', course.course_name, 'is not available in current semester')
                     else:
-                        print ("can't enroll", self.name ,':', course.course_name, 'is not available in current semester')
-                else:
-                    print ("Can't enroll" ,self.name,':', course.course_name, 'is not available for',self.year)
+                        print ("Can't enroll" ,self.name,':', course.course_name, 'is not available for',self.year)
 
-            elif self.year == 'SE':
-                if course.semester == 'III' or course.semester == 'IV':
-                    if course.semester in current_semester:
-                        self.enrolled_courses.append(course)
-                        course.enrollments.append(self)
+                elif self.year == 'SE':
+                    if course.semester == 'III' or course.semester == 'IV':
+                        if course.semester in current_semester:
+                            self.enrolled_courses.append(course)
+                            course.enrollments.append(self)
+                        else:
+                            print ("can't enroll", self.name ,':', course.course_name, 'is not available in current semester')
                     else:
-                        print ("can't enroll", self.name ,':', course.course_name, 'is not available in current semester')
-                else:
-                    print ("Can't enroll" ,self.name,':', course.course_name, 'is not available for',self.year)
+                        print ("Can't enroll" ,self.name,':', course.course_name, 'is not available for',self.year)
 
-            elif self.year == 'FE':
-                if course.semester == 'I' or course.semester == 'II':
-                    if course.semester in current_semester:
-                        self.enrolled_courses.append(course)
-                        course.enrollments.append(self)
+                elif self.year == 'FE':
+                    if course.semester == 'I' or course.semester == 'II':
+                        if course.semester in current_semester:
+                            self.enrolled_courses.append(course)
+                            course.enrollments.append(self)
+                        else:
+                            print ("can't enroll", self.name ,':', course.course_name, 'is not available in current semester')
                     else:
-                        print ("can't enroll", self.name ,':', course.course_name, 'is not available in current semester')
-                else:
-                    print ("Can't enroll" ,self.name,':', course.course_name, 'is not available for',self.year)
-            
+                        print ("Can't enroll" ,self.name,':', course.course_name, 'is not available for',self.year) 
+            else:
+                print ("Cannot enroll student: ",self.name , ',capacity is full')
         else:
-            print ("Cannot enroll student: ",self.name , 'capacity is full')
+            print('Cannot enroll Student: ',self.name ,',Department does not match')
     #repr function for representing student data
     def __repr__(self):
         enrolls = []
@@ -90,7 +93,6 @@ class Professor:
     def __init__(self,prof_name, subjects_taught = []):
         self.prof_name = prof_name
         self.subjects_taught = subjects_taught
-        
 
     def __repr__(self):
         return 'Professor Name = %s , Subjects_Taught = %s' % (self.prof_name , ','.join(self.subjects_taught))
@@ -99,8 +101,7 @@ class Department:
     def __init__(self,dept_name,HOD_name):
         self.HOD_name = HOD_name
         self.dept_name = dept_name
-
-    
+  
     def assign_course_to_professor(self,professor,course):
         prof_list = []
         course_list = []
