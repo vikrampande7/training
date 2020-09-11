@@ -453,3 +453,81 @@ False
 
 Section 4.7.2
 -------------
+"Keyword Arguments"
+>>> def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
+...     print("-- This parrot wouldn't", action, end=' ')
+...     print("if you put", voltage, "volts through it.")
+...     print("-- Lovely plumage, the", type)
+...     print("-- It's", state, "!")
+...
+>>> parrot(1000)
+-- This parrot wouldn't voom if you put 1000 volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's a stiff !
+>>> parrot(voltage=1000)
+-- This parrot wouldn't voom if you put 1000 volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's a stiff !
+>>> parrot(voltage=1000000, action='VOOOOOM')
+-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's a stiff !
+>>> parrot('a million', 'bereft of life', 'jump')
+-- This parrot wouldn't jump if you put a million volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's bereft of life !
+>>> parrot('a thousand', state='pushing up the daisies')
+-- This parrot wouldn't voom if you put a thousand volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's pushing up the daisies !
+When final parameter is **name, it recieves a dictionary.
+When final parameter is *name, it recieves a tuple.
+>>> def cheeseshop(kind, *arguments, **keywords):
+...     print("-- Do you have any", kind, "?")
+...     print("-- I'm sorry, we're all out of", kind)
+...     for arg in arguments:
+...         print(arg)
+...     print("-" * 40)
+...     for kw in keywords:
+...         print(kw, ":", keywords[kw])
+...
+>>> cheeseshop("Limburger", "It's very runny, sir.",
+...            "It's really very, VERY runny, sir.",
+...            shopkeeper="Michael Palin",
+...            client="John Cleese",
+...            sketch="Cheese Shop Sketch")
+-- Do you have any Limburger ?
+-- I'm sorry, we're all out of Limburger
+It's very runny, sir.
+It's really very, VERY runny, sir.
+----------------------------------------
+shopkeeper : Michael Palin
+client : John Cleese
+sketch : Cheese Shop Sketch
+
+
+Section 4.7.3
+-------------
+def f(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2):
+      -----------    ----------     ----------
+        |             |                  |
+        |        Positional or keyword   |
+        |                                - Keyword only
+         -- Positional only
+a) Positional Keyword Arguments
+If / and * are not present in the function definition, arguments may be passed to a function by position or by keyword.
+b) Positional only arguments
+Parameters before / are Positional
+c) Keyword only arguments
+Parameters after / are keyword parameters
+>>> def combined_example(pos_only, /, standard, *, kwd_only):
+...     print(pos_only, standard, kwd_only)
+...
+>>> combined_example(1, 2, 3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: combined_example() takes 2 positional arguments but 3 were given
+>>> combined_example(1, 2, kwd_only=3)
+1 2 3
+>>> combined_example(1, standard=2, kwd_only=3)
+1 2 3
