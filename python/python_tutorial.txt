@@ -531,3 +531,44 @@ TypeError: combined_example() takes 2 positional arguments but 3 were given
 1 2 3
 >>> combined_example(1, standard=2, kwd_only=3)
 1 2 3
+
+Section 4.7.4
+-------------
+"Arbitrary Argument Lists"
+Function can be called with arbitrary number of arguments.
+These arguments come in the form of Tuple.
+These 'Variadic' arguments are a list of formal parameters.
+>>>def write_multiple_items(file, separator, *args):
+...    file.write(separator.join(args))
+>>> def concat(*args,sep="/"):
+...     return sep.join(args)
+...
+>>> concat("earth", "mars", "venus")
+'earth/mars/venus'
+>>> concat("earth", "mars", "venus", sep=".")
+'earth.mars.venus'
+
+Section 4.7.5
+-------------
+"Unpacking argument list"
+>>> list(range(3, 6))            
+[3, 4, 5]
+>>> args = [3, 6]
+>>> list(range(*args))            
+[3, 4, 5]
+
+Section 4.7.6
+-------------
+"Lambda Expressions"
+Small anonymous functions can be created with the lambda keyword.
+This function returns the sum of its two arguments: lambda a, b: a+b.
+Lambda functions can be used wherever function objects are required.
+>>> def incrementor(n):
+...     return lambda x: x + n
+...
+>>> f = incrementor(43)
+>>> f(0)
+43
+>>> f(7)
+50
+Another use is to pass a small function as an argument.
