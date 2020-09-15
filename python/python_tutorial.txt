@@ -572,3 +572,35 @@ Lambda functions can be used wherever function objects are required.
 >>> f(7)
 50
 Another use is to pass a small function as an argument.
+
+Section 4.7.7
+-------------
+"Documentation Strings"
+>>> def my_function():
+...     """
+...     It does nothing.
+...     """
+...     pass
+...
+>>> print(my_function.__doc__)
+
+        It does nothing.
+
+Section 4.7.8
+-------------
+Function annotations are completely optional metadata information about the types used by user-defined functions.
+Parameter annotations are defined by a colon after the parameter name.
+Return annotations are defined by a literal ->.
+>>> def f(ham: str, eggs: str = 'eggs') -> str:
+...     print("Annotations:", f.__annotations__)
+...     print("Arguments:", ham, eggs)
+...     return ham + ' and ' + eggs
+>>> def f(ham: str, eggs: str = 'eggs') -> str:
+...     print("Annotations:", f.__annotations__)
+...     print("Arguments:", ham, eggs)
+...     return ham + ' and ' + eggs
+
+Section 4.8
+-----------
+"Coding Style"
+PEP 8 is used as coding style.
