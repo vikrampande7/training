@@ -667,3 +667,89 @@ Return a shallow copy of the list. Equivalent to a[:].
 ['apple', 'apple', 'banana', 'banana', 'grape', 'kiwi', 'orange', 'pear']
 >>> fruits.pop()
 'pear'
+
+Subsection 5.1.1
+----------------
+"Using Lists as stack"
+Last-In-First-out
+Appends the element at the end using .append().
+Deletes the element at the end with .pop().
+>>> stack = [ 1, 2, 3]
+>>> stack
+[1, 2, 3]
+>>> print(stack)
+[1, 2, 3]
+>>> stack.append(4)
+>>> stack.append(5)
+>>> stack
+[1, 2, 3, 4, 5]
+>>> stack.pop()
+5
+>>> stack
+[1, 2, 3, 4]
+>>> stackk.pop(1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'stackk' is not defined
+>>> stack.pop(1)
+2
+>>> stack
+[1, 3, 4]
+
+Subsection 5.1.2
+----------------
+"Using Lists as Queue"
+>>> from collections import deque
+>>> queue = deque(["Eric", "John", "Michael"])
+>>> queue.append("Vikram")
+>>> queue
+deque(['Eric', 'John', 'Michael', 'Vikram'])
+>>> queue.append("Jerry")
+>>> queue
+deque(['Eric', 'John', 'Michael', 'Vikram', 'Jerry'])
+>>> queue.popleft()
+'Eric'
+>>> queue.popright()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'collections.deque' object has no attribute 'popright'
+>>> deque
+<class 'collections.deque'>
+>>> collections.dequq
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'collections' is not defined
+>>> collections.deque
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'collections' is not defined
+>>> deque
+<class 'collections.deque'>
+>>> queue
+deque(['John', 'Michael', 'Vikram', 'Jerry'])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
